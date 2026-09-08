@@ -1,1 +1,3 @@
-.gitkeep
+# GIT COMMANDS - explained
+
+Przydatne komendy:
