@@ -3,41 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moja Wizytkowka</title>
+    <title>Wizytówka - Anna Augustyniak</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>Anna Augustyniak</header>
+    <header>
+        <!-- avatar -->
+                 <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile pic">    
+
+        <div>
+            <h1>Anna Augustyniak</h1>
+            <p>Technik programista - klasa 5p1t</p>
+        </div>
+    </header>
+    
     <main>
+        <section class="omnie">
+            <h2>o mnie</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe quis sequi minima ad reiciendis dolores explicabo ex optio, officiis nihil. Adipisci minus inventore corrupti deleniti. Temporibus sed et in dolorum.</p>
+        </section>
+
     <section id="skills">
         <h4>Lista technologii</h4>
-        <ol>
+        <ul>
             <li>React</li>
             <li>HTML</li>
             <li>CSS</li>
             <li>JavaScript</li>
             <li>PHP</li>
-        </ol>
-        
+        </ul>    
     </section>
+
     <section id="contact-form">
-        <form action="">
-            <label for="name">imie</label>
-            <input type="text" name="name" id="name" required>
-            <label for="email">e-mail</label>
-            <input type="email" name="email" id="email" required>
-            <label for="topic">temat</label>
-            <select name="topic" id="topic">
-                <option value="1">opcja 1</option>
-                <option value="2">opcja 2</option>
-                <option value="3">opcja 3</option>
-            </select>
-            <label for="message">wiadomosc</label>
-            <textarea name="message" id="message" rows="4" placeholder="wpisz wiadomos...">
-            </textarea>
-            <button type="button">przycisk</button>
+        <form id="formularz" novalidate>
+            <div class="pole">
+                <label for="name">Imie i naziwsko</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="pole">
+                <label for="email">Adres e-mail</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="pole">
+                <label for="topic">temat</label>
+                <select name="topic" id="topic">
+                    <option value="">wybierz temat -</option>
+                    <option value="1">opcja 1</option>
+                    <option value="2">opcja 2</option>
+                    <option value="3">opcja 3</option>
+                </select>
+            </div>
+            <div class="pole">
+                <label for="message">wiadomosc</label>
+                <textarea name="message" id="message" rows="5" placeholder="wpisz wiadomos...">
+                </textarea>
+                <p class="blad" id="blad-wiadomosci"></p>
+            </div>
+
+            <button type="button" class="przycisk">wyslij wiadomosc</button>
         </form>
-        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile pic">    
         </section>
     </main>
 </body>
