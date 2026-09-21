@@ -35,30 +35,32 @@
     <section id="contact-form">
         <form id="formularz" novalidate>
             <div class="pole">
-                <label for="name">Imię i nazwisko</label>
-                <input type="text" name="name" id="name" required>
+                <label for="imie">Imię i nazwisko</label>
+                <input type="text" name="imie" id="imie">
+                <p class="blad" id="blad-imie"></p>
             </div>
             <div class="pole">
                 <label for="email">Adres e-mail</label>
-                <input type="email" name="email" id="email" required>
+                <input type="email" name="email" id="email">
+                <p class="blad" id="blad-email"></p>
             </div>
             <div class="pole">
-                <label for="topic">Temat</label>
-                <select name="topic" id="topic">
+                <label for="temat">Temat</label>
+                <select name="temat" id="temat">
                     <option value="">wybierz temat -</option>
                     <option value="1">opcja 1</option>
                     <option value="2">opcja 2</option>
                     <option value="3">opcja 3</option>
                 </select>
+                <p class="blad" id="blad-temat"></p>
             </div>
             <div class="pole">
-                <label for="message">Wiadomość</label>
-                <textarea name="message" id="message" rows="5" placeholder="Wpisz wiadomość...">
-                </textarea>
-                <p class="blad" id="blad-wiadomosci"></p>
+                <label for="wiadomosc">Wiadomość</label>
+                <textarea name="wiadomosc" id="wiadomosc" rows="5" placeholder="Wpisz wiadomość..."></textarea>
+                <p class="blad" id="blad-wiadomosc"></p>
             </div>
 
-            <button type="button" class="przycisk">wyslij wiadomosc</button>
+            <button type="submit" class="przycisk">Wyślij wiadomość</button>
         </form>
 
         <div id="podziekowanie" class="podziekowanie" hidden>
