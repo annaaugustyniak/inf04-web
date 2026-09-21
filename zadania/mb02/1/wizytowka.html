@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizytówka - Anna Augustyniak</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="naglowek">
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Domyślne zdjęcie profilowe" class="awatar">
+        <div>
+            <h1>Anna Augustyniak</h1>
+            <p class="podtytul">Technik programista - klasa 5p1t</p>
+        </div>
+    </header>
+    
+    <main>
+        <section class="omnie">
+            <h2>O mnie</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe quis sequi minima ad reiciendis dolores explicabo ex optio, officiis nihil. Adipisci minus inventore corrupti deleniti. Temporibus sed et in dolorum.</p>
+        </section>
+
+    <section id="umiejetnosci">
+        <h2>Lista technologii</h2>
+        <ul class="lista-umiejetnosci">
+            <li>React</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>PHP</li>
+        </ul>    
+    </section>
+
+    <section id="contact-form">
+        <form id="formularz" novalidate>
+            <div class="pole">
+                <label for="imie">Imię i nazwisko</label>
+                <input type="text" name="imie" id="imie">
+                <p class="blad" id="blad-imie"></p>
+            </div>
+            <div class="pole">
+                <label for="email">Adres e-mail</label>
+                <input type="email" name="email" id="email">
+                <p class="blad" id="blad-email"></p>
+            </div>
+            <div class="pole">
+                <label for="temat">Temat</label>
+                <select name="temat" id="temat">
+                    <option value="">wybierz temat -</option>
+                    <option value="1">opcja 1</option>
+                    <option value="2">opcja 2</option>
+                    <option value="3">opcja 3</option>
+                </select>
+                <p class="blad" id="blad-temat"></p>
+            </div>
+            <div class="pole">
+                <label for="wiadomosc">Wiadomość</label>
+                <textarea name="wiadomosc" id="wiadomosc" rows="5" placeholder="Wpisz wiadomość..."></textarea>
+                <p class="blad" id="blad-wiadomosc"></p>
+            </div>
+
+            <button type="submit" class="przycisk">Wyślij wiadomość</button>
+        </form>
+
+        <div id="podziekowanie" class="podziekowanie" hidden>
+            <h3>Dziękuję za wiadomość!</h3>
+            <p id="podziekowanie-tresc"></p>
+        </div>
+    </section>
+    </main>
+    
+    <footer class="stopka">
+    <p>Anna Augustyniak · <a href="https://github.com/annaaugustyniak">GitHub</a> ·
+      <a href="mailto:aaugustynia08@gmail.com">aaugustynia08@gmail.com</a>
+    </p>
+  </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
