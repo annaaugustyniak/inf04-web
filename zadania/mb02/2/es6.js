@@ -15,3 +15,8 @@ export const sumaGodzin = (tablica) =>
 
 export const opis = (kurs) =>
   `Kurs ${kurs.nazwa} trwa ${kurs.godziny} godzin`;
+
+export const dodajGodziny = (kurs, liczbaGodzin) => ({
+  ...kurs,
+  godziny: kurs.godziny + liczbaGodzin,
+});
