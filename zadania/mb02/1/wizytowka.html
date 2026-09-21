@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <!-- avatar -->
-                 <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile pic">    
-
+    <header class="naglowek">
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Domyślne zdjęcie profilowe" class="awatar">
         <div>
             <h1>Anna Augustyniak</h1>
-            <p>Technik programista - klasa 5p1t</p>
+            <p class="podtytul">Technik programista - klasa 5p1t</p>
         </div>
     </header>
     
     <main>
         <section class="omnie">
-            <h2>o mnie</h2>
+            <h2>O mnie</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe quis sequi minima ad reiciendis dolores explicabo ex optio, officiis nihil. Adipisci minus inventore corrupti deleniti. Temporibus sed et in dolorum.</p>
         </section>
 
-    <section id="skills">
-        <h4>Lista technologii</h4>
-        <ul>
+    <section id="umiejetnosci">
+        <h2>Lista technologii</h2>
+        <ul class="lista-umiejetnosci">
             <li>React</li>
             <li>HTML</li>
             <li>CSS</li>
@@ -37,7 +35,7 @@
     <section id="contact-form">
         <form id="formularz" novalidate>
             <div class="pole">
-                <label for="name">Imie i naziwsko</label>
+                <label for="name">Imię i nazwisko</label>
                 <input type="text" name="name" id="name" required>
             </div>
             <div class="pole">
@@ -45,7 +43,7 @@
                 <input type="email" name="email" id="email" required>
             </div>
             <div class="pole">
-                <label for="topic">temat</label>
+                <label for="topic">Temat</label>
                 <select name="topic" id="topic">
                     <option value="">wybierz temat -</option>
                     <option value="1">opcja 1</option>
@@ -54,15 +52,28 @@
                 </select>
             </div>
             <div class="pole">
-                <label for="message">wiadomosc</label>
-                <textarea name="message" id="message" rows="5" placeholder="wpisz wiadomos...">
+                <label for="message">Wiadomość</label>
+                <textarea name="message" id="message" rows="5" placeholder="Wpisz wiadomość...">
                 </textarea>
                 <p class="blad" id="blad-wiadomosci"></p>
             </div>
 
             <button type="button" class="przycisk">wyslij wiadomosc</button>
         </form>
-        </section>
+
+        <div id="podziekowanie" class="podziekowanie" hidden>
+            <h3>Dziękuję za wiadomość!</h3>
+            <p id="podziekowanie-tresc"></p>
+        </div>
+    </section>
     </main>
+    
+    <footer class="stopka">
+    <p>Anna Augustyniak · <a href="https://github.com/annaaugustyniak">GitHub</a> ·
+      <a href="mailto:aaugustynia08@gmail.com">aaugustynia08@gmail.com</a>
+    </p>
+  </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>
