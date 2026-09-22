@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import photos from "../data/photos.json";
 import PhotoCard from "./PhotoCard.jsx";
+import PhotoModal from "./PhotoModal.jsx";
 
 function Gallery() {
   return (
@@ -10,6 +11,7 @@ function Gallery() {
           <div className="col-12 col-md-6 col-lg-4">
             <PhotoCard {...photo} />
           </div>
+          <PhotoModal {...photo} />
         </Fragment>
       ))}
     </div>
