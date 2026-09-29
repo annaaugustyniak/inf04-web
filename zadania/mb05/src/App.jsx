@@ -1,12 +1,12 @@
-import Navbar from "./components/Navbar";
-import CategoryBar from "./components/CategoryBar";
-import Gallery from "./components/Gallery";
-import Footer from "./components/Footer";
-import AddPhotoModal from "./components/AddPhotoModal";
-import FiltersOffcanvas from "./components/FiltersOffcanvas";
+import { useState } from "react";
+import Navbar from "./components/Navbar.jsx";
+import CategoryBar from "./components/CategoryBar.jsx";
+import Gallery from "./components/Gallery.jsx";
+import AddPhotoModal from "./components/AddPhotoModal.jsx";
+import FiltersOffcanvas from "./components/FiltersOffcanvas.jsx";
+import Footer from "./components/Footer.jsx";
 import photos from "./data/photos.json";
 import "./App.css";
-import { useState } from "react";
 
 function App() {
   const [zdjecia, setZdjecia] = useState(photos);
@@ -16,6 +16,22 @@ function App() {
     aktywnaKategoria === "wszystkie"
       ? zdjecia
       : zdjecia.filter((z) => z.category === aktywnaKategoria);
+
+  function usunZdjecie(id) {
+    setZdjecia(zdjecia.filter((z) => z.id !== id));
+  }
+
+  function dodajZdjecie(nowe) {
+    const noweId = Math.max(...zdjecia.map((z) => z.id)) + 1;
+    setZdjecia([...zdjecia, { ...nowe, id: noweId, favorite: false }]);
+  }
+
+  function przelaczUlubione(id) {
+    setZdjecia(
+      zdjecia.map((z) => (z.id === id ? { ...z, favorite: !z.favorite } : z))
+    );
+  }
+
   return (
     <>
       <Navbar />
@@ -25,8 +41,8 @@ function App() {
           <div className="col-12 col-lg-8">
             <h1 className="mb-2">Galeria zdjęć</h1>
             <p className="lead text-body-secondary mb-0">
-              Zdjęcia z wypraw w gory, nad morze i po mieście. Wybierz
-              kategorię, sżeby zawęzić widok - albo powiększ zdjęcie, które Ci
+              Zdjęcia z wypraw w góry, nad morze i po mieście. Wybierz
+              kategorię, żeby zawęzić widok — albo powiększ zdjęcie, które Ci
               się spodoba.
             </p>
           </div>
@@ -59,16 +75,31 @@ function App() {
           aktywna={aktywnaKategoria}
           onWybierz={setAktywnaKategoria}
         />
+
+        <p className="text-body-secondary">
+          Wyświetlono {widoczne.length} z {zdjecia.length} zdjęć
+        </p>
+
         {widoczne.length === 0 && (
           <div className="alert alert-warning">
-            Nie znaleziono zdjec w tej kategorii
+            Nie znaleziono zdjęć w tej kategorii.
           </div>
         )}
-        <Gallery zdjecia={widoczne} />
+
+        <Gallery
+          zdjecia={widoczne}
+          onUsun={usunZdjecie}
+          onPrzelacz={przelaczUlubione}
+        />
       </main>
+
       <Footer />
-      <AddPhotoModal />
-      <FiltersOffcanvas />
+
+      <AddPhotoModal onDodaj={dodajZdjecie} />
+      <FiltersOffcanvas
+        aktywna={aktywnaKategoria}
+        onWybierz={setAktywnaKategoria}
+      />
     </>
   );
 }
